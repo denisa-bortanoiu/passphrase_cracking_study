@@ -1,3 +1,4 @@
+import time
 from oracle import Oracle
 
 
@@ -77,13 +78,19 @@ class MarkovChains(object):
 
     def attack(self, oracle):
         print "Starting attack..."
+        start = time.time()
         for state in self.states:
             if self.generate(oracle, state, ''.join([word for word in state.current if word != '.'])):
+                end = time.time()
+                print end - start
                 return
-        print "Could not the passphrase"
+        print time.time() - start
+        print "Could not crack the passphrase"
 
 
 def test_me():
     test = MarkovChains(4, 20)
     test.read_states()
-    test.attack(Oracle("thefieldofbattle"))
+    test.attack(Oracle("onthefieldofbattle"))
+
+test_me()

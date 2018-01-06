@@ -2,8 +2,8 @@ import string
 
 
 class ExtractNgrams(object):
-    def __init__(self):
-        self.n = 4
+    def __init__(self, n=4):
+        self.n = n
         self.text_file = "test_extract.txt"
         self.word_list = []
         self.ngrams = {}

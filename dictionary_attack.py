@@ -34,6 +34,6 @@ class Dictionary(BruteForce):
 
 def test_me():
     test_example = Dictionary(1, 5)
-    test_example.attack(Oracle("thefieldofbattle"))
+    test_example.attack(Oracle("thisisa"))
 
 test_me()
